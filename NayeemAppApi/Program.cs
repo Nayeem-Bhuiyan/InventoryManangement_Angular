@@ -21,10 +21,6 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
               .AddDefaultTokenProviders();
 builder.Services.Configure<ApplicationSettings>(builder.Configuration.GetSection("ApplicationSettings"));
 
-
-
-
-
 #region App Database Settings
 builder.Services.AddDbContext<ApplicationDbContext>(Opt => Opt.UseSqlServer(builder.Configuration.GetConnectionString("AppDbConnection")));
 
