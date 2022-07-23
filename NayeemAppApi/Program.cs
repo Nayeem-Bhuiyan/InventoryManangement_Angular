@@ -5,6 +5,10 @@ using Microsoft.IdentityModel.Tokens;
 using NayeemApp.DataAccess;
 using NayeemApp.DataAccess.Context;
 using NayeemApp.Helper;
+using NayeemApp.Services.ProjectEmailService.EmailService;
+using NayeemApp.Services.ProjectEmailService.EmailService.Interface;
+using NayeemApp.Services.UserEntityService;
+using NayeemApp.Services.UserEntityService.Interface;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +21,10 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
               .AddDefaultTokenProviders();
 builder.Services.Configure<ApplicationSettings>(builder.Configuration.GetSection("ApplicationSettings"));
 
+
+
+
+
 #region App Database Settings
 builder.Services.AddDbContext<ApplicationDbContext>(Opt => Opt.UseSqlServer(builder.Configuration.GetConnectionString("AppDbConnection")));
 
@@ -25,6 +33,9 @@ builder.Services.AddMemoryCache();
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 #endregion
 
+
+builder.Services.AddScoped(typeof(IUserService), typeof(UserService));
+builder.Services.AddScoped(typeof(IEmailService), typeof(EmailService));
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
