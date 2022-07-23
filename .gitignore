@@ -3,3 +3,13 @@
 ################################################################################
 
 /.vs/NayeemApp/FileContentIndex
+/NayeemApp.DataAccess/bin/Debug/net6.0
+/NayeemApp.DataAccess/obj
+/NayeemApp.Domain/bin/Debug/net6.0
+/NayeemApp.Domain/obj
+/NayeemApp.Helper/bin/Debug/net6.0
+/NayeemApp.Helper/obj
+/NayeemApp.Services/bin/Debug/net6.0
+/NayeemApp.Services/obj
+/NayeemAppApi/bin/Debug/net6.0
+/NayeemAppApi/obj
