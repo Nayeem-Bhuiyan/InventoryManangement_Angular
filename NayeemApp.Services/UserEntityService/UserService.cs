@@ -1,11 +1,15 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 using NayeemApp.DataAccess;
 using NayeemApp.Domain.Entity;
 using NayeemApp.Helper;
+using NayeemApp.Services.ProjectEmailService.EmailService.Interface;
 using NayeemApp.Services.UserEntityService.Interface;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
