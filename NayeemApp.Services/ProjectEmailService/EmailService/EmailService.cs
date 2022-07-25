@@ -38,8 +38,8 @@ namespace NayeemApp.Services.ProjectEmailService.EmailService
             {
                 var credential = new NetworkCredential
                 {
-                    UserName = "abc@mail.com",  // replace with valid value
-                    Password = "122456789"  // replace with valid value
+                    UserName = "idb40nayeem@gmail.com",  // replace with valid value
+                    Password = "ygfpxfhjvbrjfewr"  // replace with valid value
                 };
                 smtp.Credentials = credential;
                 smtp.Host = "smtp.office365.com";
