@@ -29,7 +29,7 @@ namespace NayeemApp.Services.ProjectEmailService.EmailService
 
             var message = new MailMessage();
             message.To.Add(new MailAddress(email));
-            message.From = new MailAddress("abc@mail.com");  // replace with valid value
+            message.From = new MailAddress("idb40nayeem@gmail.com");  // replace with valid value
             message.Subject = subject;
             message.Body = string.Format(body, firstName, lastName, callbackUrl);
             message.IsBodyHtml = true;
@@ -42,7 +42,7 @@ namespace NayeemApp.Services.ProjectEmailService.EmailService
                     Password = "ygfpxfhjvbrjfewr"  // replace with valid value
                 };
                 smtp.Credentials = credential;
-                smtp.Host = "smtp.office365.com";
+                smtp.Host = "smtp.gmail.com";
                 smtp.Port = 587;
                 smtp.EnableSsl = true;
                 await smtp.SendMailAsync(message);
