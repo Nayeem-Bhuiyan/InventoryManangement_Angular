@@ -20,8 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NayeemApp.DataAccess\NayeemApp.DataAccess.csproj" />
-    <ProjectReference Include="..\NayeemApp.Helper\NayeemApp.Helper.csproj" />
     <ProjectReference Include="..\NayeemApp.Services\NayeemApp.Services.csproj" />
   </ItemGroup>
 
