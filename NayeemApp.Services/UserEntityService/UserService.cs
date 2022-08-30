@@ -24,8 +24,6 @@ namespace NayeemApp.Services.UserEntityService
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailService _emailService;
         private readonly ApplicationSettings _appSettings;
-
-
         public UserService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IEmailService emailService, IOptions<ApplicationSettings> appSettings)
         {
             _userManager= userManager;
@@ -33,7 +31,6 @@ namespace NayeemApp.Services.UserEntityService
             _emailService= emailService;
             _appSettings = appSettings.Value;
         }
-
         public async Task<IdentityResult> CreateUser(User model)
         {
             var user = new ApplicationUser
@@ -46,9 +43,7 @@ namespace NayeemApp.Services.UserEntityService
                 CreatedBy=model.CreatedBy,
                 Deleted=false
             };
-
             var userResult = await _userManager.CreateAsync(user, model.Password);
-
             if (userResult.Succeeded)
             {
                 var roleResult = await _userManager.AddToRoleAsync(user, model.Role);
@@ -64,7 +59,6 @@ namespace NayeemApp.Services.UserEntityService
                     await _emailService.SendEmail(model.Email, model.FirstName, model.LastName, HtmlEncoder.Default.Encode(callbackUrl), "Code Cerculation Account activation link", "CreateUser");
                 }
             }
-
             return userResult;
         }
 
